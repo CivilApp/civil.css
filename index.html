@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>civil.css (Typography Kitchen Sink)</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://basehold.it/30">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nunito:300,400,700|Merriweather:400,400italic,700,700italic|Source+Code+Pro">
+
+    <link rel="stylesheet" href="/bower_components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/civil.css">
+    <link rel="stylesheet" href="/css/theme.css">
+</head>
+
+<body>
+<div class="wrapper">
+    <h1>Grumpy wizards make toxic brew for the evil Queen and Jack.</h1>
+
+    <p><time datetime="2014-11-04 09:24:00">04 November 2015</time></p>
+
+    <p><small>Hello World!</small></p>
+
+    <p><a href="#">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit. <em>Nam laoreet</em> elit quis congue dictum. <strong>Maecenas rutrum</strong> dolor et mi volutpat, quis vulputate risus cursus. <del>Vivamus dapibus</del> urna nibh, sed pellentesque mi blandit quis. Suspendisse vitae pretium mi. Nam gravida dignissim ex vel mollis. Quisque quis sollicitudin leo. Suspendisse ac lacus ac ex porta varius at vel erat. <code>Donec</code> auctor urna sed mi ultricies, eget iaculis orci commodo. Mauris nec faucibus libero. Nunc pretium nunc non ex venenatis, et tempus velit dictum. Etiam sodales tincidunt cursus</p>
+
+    <h2>Grumpy wizards make toxic brew for the evil Queen and Jack.</h2>
+
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+    </ul>
+
+    <h3>Grumpy wizards make toxic brew for the evil Queen and Jack.</h3>
+
+    <p>Vestibulum bibendum erat mauris, quis aliquet mauris egestas sit amet. In vel tempor nunc. Morbi velit sapien, condimentum nec tempus sit amet, auctor at felis. Sed iaculis auctor neque, vel suscipit quam consectetur eget. Sed congue massa id libero blandit mattis. Duis et fringilla enim. Etiam placerat facilisis diam, vel accumsan erat eleifend vitae.</p>
+
+    <blockquote><p>Cras turpis dolor, tincidunt eget arcu at, auctor pulvinar magna. Mauris nulla augue, tincidunt at metus quis, tincidunt tempus dui. Proin sed commodo ex, id scelerisque mi.</p></blockquote>
+
+    <p>Etiam porta sit amet felis ac ornare. Quisque eget massa arcu. Nullam aliquet fringilla dolor, ut fermentum eros ullamcorper pretium. Cras malesuada magna lectus, id gravida purus sagittis sit amet. Sed id ultricies dolor.</p>
+
+    <h4>Grumpy wizards make toxic brew for the evil Queen and Jack.</h4>
+    <h5>Grumpy wizards make toxic brew for the evil Queen and Jack.</h5>
+    <h6>Grumpy wizards make toxic brew for the evil Queen and Jack.</h6>
+
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">HelloWorldController</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="c1">// Embedding: &quot;Inherit&quot; BaseController</span>
+    <span class="nx">BaseController</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">this</span> <span class="o">*</span><span class="nx">HelloWorldController</span><span class="p">)</span> <span class="nx">Get</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Set </span>
+    <span class="nx">this</span><span class="p">.</span><span class="nx">Data</span><span class="p">[</span><span class="s">&quot;Title&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;Hello World!&quot;</span>
+    
+    <span class="c1">// TplNames is parsed into </span>
+    <span class="nx">this</span><span class="p">.</span><span class="nx">TplNames</span> <span class="p">=</span> <span class="s">&quot;hello_world.tpl&quot;</span>
+<span class="p">}</span></code></pre></div>
+</div>
+</body>
+</html>
