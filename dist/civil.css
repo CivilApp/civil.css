@@ -54,6 +54,14 @@ p, ul, ol {
     margin: 0 0 1.875rem;
 }
 
+hr {
+    background: #EEE;
+    border: 0;
+    margin: 2.665rem auto;
+    height: .295rem;
+    width: 50%;
+}
+
 blockquote {
     font-style: italic;
     margin: 0 0 1.875rem;
@@ -75,7 +83,7 @@ blockquote {
 code {
     background: #EEE;
     font-size: 1rem;
-    padding: .182rem .478rem;
+    padding: .295rem .478rem;
 }
 /* Breaks vertical rhythm, but we'll ignore it */
 pre {
@@ -99,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 3.272rem;
     font-weight: 300;
-    line-height: 3.75rem;
+    line-height: 3.75rem; /* Convert to no units */
 }
 
 h2 {
@@ -142,7 +150,7 @@ h6, small {
  */
 .wrapper {
     margin: 0 auto;
-    width: 46.875rem; /* 700px */
+    max-width: 46.875rem; /* 750px */
 }
 
 
