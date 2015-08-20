@@ -13,3 +13,11 @@ h1, h2, h3, h4, h5, h6 {
 pre, code {
     font-family: 'Source Code Pro', monospace;
 }
+
+a {
+    color: #FB7973;
+}
+    a:hover {
+        color: #E06C67;
+        text-decoration: none;
+    }
