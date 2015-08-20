@@ -74,6 +74,7 @@ blockquote {
 
 code {
     background: #EEE;
+    font-size: 1rem;
     padding: .182rem .478rem;
 }
 /* Breaks vertical rhythm, but we'll ignore it */
