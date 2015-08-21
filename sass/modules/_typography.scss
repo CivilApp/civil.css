@@ -1,0 +1,182 @@
+/*
+ Typography
+
+ Defaults...
+ Modular scale: 20px and 700px at 1.618 (golden ratio)
+ http://www.modularscale.com/?20,700&px&1.618&web&text
+
+ Vertical rhythm: 1.25rem (of 16px) * 1.5 = 30px
+ Spacing: 0.9375 (2x), 1.875, 2.8125 (req: margins), 3.75
+ */
+
+/*
+ 1. Headings
+
+ Reset
+ font-weight -> default value (bold) is too overwhelming
+ margin -> vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin: 0 0 $kl-i-1;
+}
+
+h1 {
+    font-size: $h1-font-size;
+    font-weight: 300;
+    line-height: calc-line-height($h1-font-size);
+}
+
+h2 {
+    font-size: $h2-font-size;
+    line-height: calc-line-height($h2-font-size);
+}
+
+h3 {
+    font-size: $h3-font-size;
+    line-height: calc-line-height($h3-font-size);
+}
+
+h4 {
+    font-size: $h4-font-size;
+    line-height: calc-line-height($h4-font-size);
+}
+
+h5, %h5 {
+    font-size: $h5-font-size;
+    line-height: calc-line-height($h5-font-size);
+}
+
+h6, %h6 {
+    font-size: $h6-font-size;
+    line-height: calc-line-height($h6-font-size);
+    text-transform: uppercase;
+}
+
+// Legibility for smaller headings
+// Ideally, these [level of headings] should never be used
+h4, h5, h6 {
+    font-weight: 700;
+}
+
+// Optimise text rendering for key elements
+h1, h2, h3 {
+    text-rendering: optimizeLegibility;
+}
+
+
+/*
+ 2. Meta elements
+ Inherits heading styles
+ */
+time {
+    @extend %h5;
+}
+
+small {
+    @extend h6;
+}
+
+
+/*
+ 3. Paragraphs
+
+ Reset
+ font-size -> sets the REAL $base-font-size (i.e. not the body's one)
+ margin -> 1 keyline increment bottom
+ */
+p, %p {
+    font-size: $base-font-size;
+    margin: 0 0 $kl-i-1;
+    text-rendering: optimizeLegibility;
+}
+    p {
+        // Fix line-height for inline elements in p (vertical rhythm)
+        small, time, code {
+            line-height: 100%;
+        }
+    }
+
+
+/*
+ 4. Code blocks
+ Much like <img>, it's likely to break vertical rhythm, but we'll ignore it
+ */
+code {
+    background: #EEE;
+    font-size: 1rem; // 16px
+    padding: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2) modular-scale(-4, $modular-scale-base-1 $modular-scale-base-2);
+}
+
+pre {
+    border: 1px solid #CCC;
+
+    margin: 0 0 $kl-i-1;
+    padding: $kl-i-1-2 $kl-i-1;
+
+    // Set a background and padding for <code> only when it's used in isolation
+    code {
+        background: none;
+        padding: 0;
+    }
+}
+
+
+/*
+ 5. Quote blocks
+ */
+blockquote {
+    font-style: italic;
+    margin: 0 0 $kl-i-1;
+    padding: $kl-i-1-2 $kl-i-1;
+    position: relative;
+
+    // Add a divider at the middle bottom
+    &:after {
+        content: "";
+        border-bottom: 1px solid #0a3039;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: modular-scale(8, $modular-scale-base-1 $modular-scale-base-2);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
+
+
+/*
+ 6. Lists
+Same as paragraphs
+ */
+ul, ol {
+    @extend %p;
+    ul, ol {
+        margin: 0;
+    }
+}
+
+
+/*
+ 7. Thematic break / divider
+ */
+hr {
+    $hr-height: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2);
+    $adjusted-keyline: ($kl-i-1 - $hr-height) / 2 + $kl-i-1;
+    background: #EEE;
+    border: 0;
+    margin: $adjusted-keyline auto;
+    height: $hr-height;
+    width: 50%;
+}
+
+
+/*
+ 7. Others
+ */
+
+// Fix line-height (assuming they are used inline)
+em, strong {
+    line-height: 100%;
+}

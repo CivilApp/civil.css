@@ -1,0 +1,7 @@
+/*
+ 1. Clearfix
+ Provided by HTML5 Boilerplate
+ */
+.block { position: relative; }
+.block:before, .block:after { content: " "; display: table; }
+.block:after { clear: both; }

@@ -1,0 +1,9 @@
+/*
+ 1. Line height calculator
+ Uses a font-size input to calculate the ideal line-height
+ The ideal line-height maintains vertical rhythm
+ */
+@function calc-line-height($s) {
+    $ratio: ceil($s / $base-keyline-increment);
+    @return ($ratio * $base-keyline-increment) / $s;
+}
