@@ -52,12 +52,6 @@ a {
 h1, h2, h3 {
     line-height: $base-keyline-increment * 2;
 }
-h4, h5, h6 {
+h4, h5, h6, small {
     line-height: $base-keyline-increment;
-}
-// Addresses potential inheritance issues
-h1, h2, h3, h4, h5, h6 {
-    * {
-        line-height: $base-line-height;
-    }
 }
