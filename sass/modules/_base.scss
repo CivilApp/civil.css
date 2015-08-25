@@ -29,5 +29,6 @@ img {
  */
 .wrapper {
     margin: 0 auto;
-    max-width: $base-content-width; /* 750px */
+    max-width: 100%; /* 750px */
+    width: $base-content-width;
 }
