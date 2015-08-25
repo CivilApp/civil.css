@@ -55,7 +55,7 @@ h6, %h6 {
 
 // Legibility for smaller headings
 // Ideally, these [level of headings] should never be used
-h4, h5, h6 {
+h4, h5, h6, %h6 {
     font-weight: 700;
 }
 
@@ -74,7 +74,7 @@ time {
 }
 
 small {
-    @extend h6;
+    @extend %h6;
 }
 
 
