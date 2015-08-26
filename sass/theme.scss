@@ -19,17 +19,23 @@ body {
     font-family: $serif;
 }
 
+// Reduce "heaviness" of headings through contrast
 h1, h2, h3, h4, h5, h6 {
-    color: lighten($base-font-colour, 3%);
+    color: tint($base-font-colour, 3%);
     font-family: $sans-serif;
 }
 
 h1, h2, h3 {
-    color: lighten($base-font-colour, 5%);
+    color: tint($base-font-colour, 5%);
 }
 
 pre, code {
     font-family: $monospace;
+}
+
+// For <small>, it is theoretically the same as h6
+time, small {
+    font-family: $sans-serif;
 }
 
 /*
@@ -37,6 +43,7 @@ pre, code {
  It might not be as clean, but it's much easier to distinguish IMHO
  */
 a {
+    @include transition(all .33s ease-in-out);
     color: $primary-colour;
 
     &:hover, &:focus {
@@ -52,6 +59,6 @@ a {
 h1, h2, h3 {
     line-height: $base-keyline-increment * 2;
 }
-h4, h5, h6, small {
+h4, h5, h6, time, small {
     line-height: $base-keyline-increment;
 }

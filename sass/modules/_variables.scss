@@ -22,9 +22,7 @@ $h4-font-size: modular-scale(1, $modular-scale-base-1 $modular-scale-base-2);
 $h5-font-size: modular-scale(0, $modular-scale-base-1 $modular-scale-base-2);
 $h6-font-size: modular-scale(-2, $modular-scale-base-1 $modular-scale-base-2);
 
-/*
- Default theme
- */
+// Default theme
 $serif: "Merriweather", $georgia;
 $sans-serif: "Nunito", $helvetica;
 $monospace: "Source Code Pro", $monospace;
@@ -32,3 +30,6 @@ $monospace: "Source Code Pro", $monospace;
 $base-font-colour: #40403D;
 $primary-colour: #FB7973;
 $secondary-colour: #373B44;
+
+$grey-light-colour: #CCC;
+$grey-lighter-colour: #EEE;
