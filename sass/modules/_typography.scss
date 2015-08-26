@@ -168,7 +168,9 @@ blockquote {
 
 /*
  6. Lists
-Same as paragraphs
+
+ Same as paragraphs
+ <dl>, <dt>, and <dd> styles taken from Reboot by Bootstrap
  */
 ul, ol, dl {
     @extend %p;
@@ -188,6 +190,8 @@ dd {
 
 /*
  7. Thematic break / divider
+
+ Taken from Lingonberry, a WordPress theme by Anders Noren
  */
 hr {
     $hr-height: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2);
