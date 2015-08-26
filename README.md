@@ -7,7 +7,7 @@ A minimal CSS library designed for perfectionists by leveraging the magic of mod
 
 There are two ways you can download, and use civil.css:
 
-- Download it from the [project page][downloads]
+- Download it from the [project page][downloads].
 - Install with [Bower][bower]: `bower install --save civil.css`
 
 
@@ -15,7 +15,7 @@ There are two ways you can download, and use civil.css:
 
 To build civil.css from source, please ensure you have installed [Bower][bower].
 
-1. Run `bower install` in the project directory
+1. Run `bower install` in the project directory.
 2. Compile the SASS files by running:
 
     ```shell
