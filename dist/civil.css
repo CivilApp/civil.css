@@ -6,6 +6,7 @@
  */
 /*
  1. Base defaults
+
  Leave font-size alone: https://goo.gl/KtKtEi
  */
 body {
@@ -13,6 +14,7 @@ body {
 
 /*
  2. Images
+
  They're likely to break vertical rhythm when stretched
  There's no real around this besides JavaScript
 
@@ -162,7 +164,9 @@ blockquote {
 
 /*
  6. Lists
-Same as paragraphs
+
+ Same as paragraphs
+ <dl>, <dt>, and <dd> styles taken from Reboot by Bootstrap
  */
 ul ul, ul ol, ol ul, ol ol, dl ul, dl ol {
   margin: 0; }
@@ -175,6 +179,8 @@ dd {
 
 /*
  7. Thematic break / divider
+
+ Taken from Lingonberry, a WordPress theme by Anders Noren
  */
 hr {
   background: #EEE;
@@ -184,13 +190,14 @@ hr {
   width: 50%; }
 
 /*
- 7. Others
+ 8. Others
  */
 em, strong {
   line-height: 100%; }
 
 /*
  1. Clearfix
+
  Provided by HTML5 Boilerplate
  */
 .block {
