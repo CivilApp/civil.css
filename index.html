@@ -83,10 +83,10 @@
     <p>You seem malnourished. Are you suffering from intestinal parasites? Anyone who laughs is a communist! You'll have all the Slurm you can drink when you're partying with Slurms McKenzie! It must be wonderful. For example, if you killed your grandfather, you'd cease to exist!</p>
 
     <h4>h4. Heading 4</h4>
-    <img src="http://placehold.it/700x350" class="stretch">
+    <img src="http://placehold.it/700x350" class="stretch js-rhythm">
 
     <h5>h5. Heading 5</h5>
-<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">HelloWorldController</span> <span class="kd">struct</span> <span class="p">{</span>
+<div class="highlight"><pre class="js-rhythm"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">HelloWorldController</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="c1">// Embedding: &quot;Inherit&quot; BaseController</span>
     <span class="nx">BaseController</span>
 <span class="p">}</span>
@@ -111,5 +111,14 @@
 
 <script src="//cdn.jsdelivr.net/jquery/3.0.0-alpha1/jquery.min.js"></script>
 <script src="dist/civil.js"></script>
+<script>
+(function ($) {
+    var $baseline = parseInt($("p").css("line-height"), 10);
+    $(".js-rhythm").civil({
+        baseline: $baseline,
+        extra: $baseline
+    });
+})(jQuery);
+</script>
 </body>
 </html>
