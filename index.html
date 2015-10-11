@@ -8,19 +8,23 @@
     <meta name="description" content="civil.css demo - experiment with different defaults, scales, and typography.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="http://basehold.it/30">
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nunito:300,400,700|Lora:400,400italic,700,700italic|Source+Code+Pro">
 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/normalize/3.0.3/normalize.min.css">
     <link rel="stylesheet" href="dist/syntax.css">
     <link rel="stylesheet" href="dist/civil.css">
-    <link rel="stylesheet" href="dist/theme.css">
 
     <style>
+        html {
+            background-image: url(http://basehold.it/i/30);
+        }
+        body {
+            margin-top: 1.5rem;
+        }
         .palette {
             list-style: none;
-            margin: 1.875rem 0;
+            margin: 1.5rem 0;
             padding: 0;
         }
         .palette > li {
@@ -32,10 +36,10 @@
             background: #40403D;
         }
         .p-primary {
-            background: #FB7973;
-        }
-        .p-secondary {
             background: #373B44;
+        }
+        .p-accent {
+            background: #FB7973;
         }
         .p-grey-1 {
             background: #CCC;
@@ -101,9 +105,9 @@
 
     <h6>h6. Heading 6</h6>
     <ul class="palette block">
-        <li class="p-primary">&nbsp;</li>
-        <li class="p-secondary">&nbsp;</li>
         <li class="p-base">&nbsp;</li>
+        <li class="p-primary">&nbsp;</li>
+        <li class="p-accent">&nbsp;</li>
         <li class="p-grey-1">&nbsp;</li>
         <li class="p-grey-2">&nbsp;</li>
     </ul>
@@ -114,9 +118,11 @@
 <script>
 (function ($) {
     var $baseline = parseInt($("p").css("line-height"), 10);
-    $(".js-rhythm").civil({
-        baseline: $baseline,
-        extra: $baseline
+    $(window).on("load", function () {
+        $(".js-rhythm").civil({
+            baseline: $baseline,
+            extra: $baseline
+        });
     });
 })(jQuery);
 </script>
