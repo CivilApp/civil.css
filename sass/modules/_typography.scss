@@ -104,7 +104,7 @@ abbr[title], abbr[data-original-title] {
  (c) text-rendering -> removes kerning added by the browser
  */
 p, %p {
-    font-size: $base-font-size; // (a)
+    //font-size: $base-font-size; // (a)
     margin: 0 0 $kl-i-1; // (b)
     text-rendering: optimizeLegibility; // (c)
 }
@@ -122,9 +122,12 @@ p, %p {
 
  Much like <img>, it's likely to break vertical rhythm, but we'll ignore it
  */
+code, pre {
+    font-size: rem(16); // 16px (code shouldn't be read like paragraphs)
+}
+
 code {
     background: $grey-lighter-colour;
-    font-size: 1rem; // 16px (code shouldn't be read like paragraphs)
     padding: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2) modular-scale(-4, $modular-scale-base-1 $modular-scale-base-2);
 }
 

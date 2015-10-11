@@ -1,8 +1,11 @@
 /*
  1. Base defaults
 
- Leave font-size alone: https://goo.gl/KtKtEi
+ Leave body font-size alone: https://goo.gl/KtKtEi
  */
+html {
+    font-size: $root-font-size;
+}
 body {
     line-height: 1.5;
 }
