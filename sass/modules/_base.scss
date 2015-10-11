@@ -1,24 +1,28 @@
-/*
- 1. Base defaults
-
- Leave body font-size alone: https://goo.gl/KtKtEi
- */
+// 1. Base defaults
+// Leave body font-size alone: https://goo.gl/KtKtEi
 html {
+    box-sizing: border-box;
     font-size: $root-font-size;
 }
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 body {
+    color: $base-font-colour;
+    font-family: $serif;
+
     line-height: 1.5;
 }
 
 
-/*
- 2. Images
-
- They're likely to break vertical rhythm when stretched
- There's no real around this besides JavaScript
-
- .stretch can be used to stretch small images to the container's width
- */
+// 2. Images
+// They're likely to break vertical rhythm when stretched
+// There's no real around this besides JavaScript
+// .stretch can be used to stretch small images to the container's width
 img {
     display: block;
     height: auto;
@@ -29,9 +33,7 @@ img {
     }
 }
 
-/*
- 3. Layout
- */
+// 3. Layout
 .wrapper {
     margin: 0 auto;
     max-width: 100%; /* 750px */

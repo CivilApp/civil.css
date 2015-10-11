@@ -2,10 +2,10 @@
  Typography
 
  Core principles:-
- - Modular scale: 20px and 700px at 1.618 (golden ratio)
-   For more info. http://www.modularscale.com/?20,700&px&1.618&web&text
+ - Modular scale: 20px and 750px at 1.618 (golden ratio)
+   For more info. http://www.modularscale.com/?20,750&px&1.618&web&text
 
- - Vertical rhythm: 1.25rem (of 16px) * 1.5 = 30px
+ - Vertical rhythm: 1rem (of 20px, root) * 1.5 = 30px
    Resulting rem spacing 0.9375 (2x), 1.875, 2.8125 (req: margins), 3.75
 
  Contents
@@ -16,19 +16,20 @@
  5. Quote blocks
  6. Lists
  7. Thematic break / divider
- 8. Others
+ 8. Links
  */
 
-/*
- 1. Headings
-
- Reset:
- (a) font-weight -> sets it to normal, as the default (bold) is too overwhelming
- (b) margin -> sets vertical rhythm for the bottom margin only
- */
+// 1. Headings
+// Reset:
+// (a) color -> reduce "heaviness" of headings through contrast
+// (b) font-weight -> sets it to normal, as the default (bold) is too overwhelming
+// (c) margin -> sets vertical rhythm for the bottom margin only
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 400; // (a)
-    margin: 0 0 $kl-i-1; // (b)
+    color: tint($base-font-colour, 3%); // (a)
+    font-family: $sans-serif;
+
+    font-weight: 400; // (b)
+    margin: 0 0 $kl-i-1; // (c)
 }
 
 h1 {
@@ -69,17 +70,16 @@ h4, h5, h6, %h6 {
     font-weight: 700;
 }
 
-// Optimise text-rendering for key elements
+// (a) color -> creating hierarchies (differentiation) through shading
+// (b) text-rendering -> optimise text-rendering for key elements
 h1, h2, h3 {
-    text-rendering: optimizeLegibility;
+    color: tint($base-font-colour, 5%); // (a)
+    text-rendering: optimizeLegibility; // (b)
 }
 
 
-/*
- 2. Meta elements
-
- Inherits heading styles (h5, and h6 respectively)
- */
+// 2. Meta elements
+// Inherits heading styles (h5, and h6 respectively)
 time {
     @extend %h5;
 }
@@ -88,47 +88,35 @@ small {
     @extend %h6;
 }
 
-// Taken from Bootstrap's Reboot
+time, small {
+    // For <small>, it is theoretically the same as h6
+    font-family: $sans-serif;
+}
+
+// Source: Bootstrap's Reboot
 abbr[title], abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted $grey-light-colour;
 }
 
 
-/*
- 3. Paragraphs
-
- Reset:
- (a) font-size -> sets the REAL $base-font-size (i.e. not the body's one)
- (b) margin -> 1 keyline increment bottom (similar to headings)
- (c) text-rendering -> removes kerning added by the browser
- */
+// 3. Paragraphs
+// Reset:
+// (a) font-size -> sets the REAL $base-font-size (i.e. not the body's one)
+// (b) margin -> 1 keyline increment bottom (similar to headings)
+// (c) text-rendering -> removes kerning added by the browser
 p, %p {
     //font-size: $base-font-size; // (a)
     margin: 0 0 $kl-i-1; // (b)
     text-rendering: optimizeLegibility; // (c)
 }
-    p {
-        // Fix line-height for inline elements in p (for vertical rhythm)
-        // Otherwise, the ACTUAL height won't match the COMPUTED height
-        small, time, code {
-            line-height: 100%;
-        }
-    }
 
 
-/*
- 4. Code blocks
-
- Much like <img>, it's likely to break vertical rhythm, but we'll ignore it
- */
-code, pre {
+// 4. Code blocks
+// Much like <img>, it's likely to break vertical rhythm, but we'll ignore it
+pre, code {
+    font-family: $monospace;
     font-size: rem(16); // 16px (code shouldn't be read like paragraphs)
-}
-
-code {
-    background: $grey-lighter-colour;
-    padding: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2) modular-scale(-4, $modular-scale-base-1 $modular-scale-base-2);
 }
 
 pre {
@@ -144,10 +132,12 @@ pre {
     }
 }
 
+code {
+    background: $grey-lighter-colour;
+    padding: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2) modular-scale(-4, $modular-scale-base-1 $modular-scale-base-2);
+}
 
-/*
- 5. Quote blocks
- */
+// 5. Quote blocks
 blockquote {
     font-style: italic;
     margin: 0 0 $kl-i-1;
@@ -157,7 +147,7 @@ blockquote {
     // Add a divider at the middle bottom
     &:after {
         content: "";
-        border-bottom: 1px solid $secondary-colour;
+        border-bottom: 1px solid tint($base-font-colour, 3%);
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -169,12 +159,9 @@ blockquote {
 }
 
 
-/*
- 6. Lists
-
- Same as paragraphs
- <dl>, <dt>, and <dd> styles taken from Reboot by Bootstrap
- */
+// 6. Lists
+// Same as paragraphs
+// Source (<dl>, <dt>, and <dd>): Bootstrap's Reboot
 ul, ol, dl {
     @extend %p;
     ul, ol {
@@ -191,11 +178,8 @@ dd {
 }
 
 
-/*
- 7. Thematic break / divider
-
- Taken from Lingonberry, a WordPress theme by Anders Noren
- */
+// 7. Thematic break / divider
+// Source: Lingonberry, a WordPress theme by Anders Noren
 hr {
     $hr-height: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2);
     $adjusted-keyline: ($kl-i-1 - $hr-height) / 2 + $kl-i-1;
@@ -206,12 +190,13 @@ hr {
     width: 50%;
 }
 
+// 8. Links
+a {
+    @include transition(all .2s cubic-bezier(0.4, 0, 0.2, 1));
+    color: $accent-colour;
 
-/*
- 8. Others
- */
-
-// Fix line-height (assuming they are used inline)
-em, strong {
-    line-height: 100%;
+    &:hover, &:focus {
+        color: shade($accent-colour, 10%);
+        text-decoration: none;
+    }
 }

@@ -1,0 +1,17 @@
+// 1. Fix line-height for inline elements in p (for vertical rhythm)
+// Otherwise, the ACTUAL height won't match the COMPUTED height
+p {
+    small, time, code,
+    em, strong {
+        line-height: 100%;
+    }
+}
+
+// 2. Temporary fix for unusual line-height behaviour
+// Computed line-height isn't the same as the displayed line-height
+h1, h2, h3 {
+    line-height: $base-keyline-increment * 2;
+}
+h4, h5, h6, time, small {
+    line-height: $base-keyline-increment;
+}
