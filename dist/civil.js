@@ -14,7 +14,7 @@
 /*global jQuery:false */
 /*eslint-disable no-underscore-dangle */
 
-(function ($) {
+;(function ($, window) {
     "use strict";
 
     var pluginName = "civil",
@@ -73,4 +73,4 @@
             }
         });
     };
-})(jQuery);
+})(jQuery, window);
