@@ -19,21 +19,7 @@ body {
 }
 
 
-// 2. Images
-// They're likely to break vertical rhythm when stretched
-// There's no real around this besides JavaScript
-// .stretch can be used to stretch small images to the container's width
-img {
-    display: block;
-    height: auto;
-    margin-bottom: $kl-i-1; // 1 keyline increment bottom
-    max-width: 100%;
-    &.stretch {
-        min-width: 100%;
-    }
-}
-
-// 3. Layout
+// 2. Layout
 .wrapper {
     margin: 0 auto;
     max-width: 100%; /* 750px */
