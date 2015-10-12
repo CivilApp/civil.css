@@ -10,7 +10,7 @@
 
  Contents
  1. Headings
- 2. Meta elements
+ 2. Inline elements
  3. Paragraphs
  4. Code blocks
  5. Quote blocks
@@ -78,7 +78,7 @@ h1, h2, h3 {
 }
 
 
-// 2. Meta elements
+// 2. Inline elements
 // Inherits heading styles (h5, and h6 respectively)
 time {
     @extend %h5;
@@ -97,6 +97,11 @@ time, small {
 abbr[title], abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted $grey-light-colour;
+}
+
+mark {
+    background: rgba(255, 255, 0, .4);
+    padding: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2) modular-scale(-4, $modular-scale-base-1 $modular-scale-base-2);
 }
 
 
@@ -191,11 +196,20 @@ hr {
 }
 
 // 8. Links
+// Keep underline for links because we are using an "accent" colour that is likely to be used on another element
+// It might not be as clean, but it's much easier to distinguish IMHO
+@mixin underline($color: $accent-colour, $weight: 1px, $offset: 2px) {
+    @include linear-gradient(to top, transparent, transparent $offset, $color $offset, $color ($offset + $weight), transparent ($offset + $weight));
+    text-decoration: none;
+}
 a {
     @include transition(all .2s cubic-bezier(0.4, 0, 0.2, 1));
+    //@include underline();
+
     color: $accent-colour;
 
     &:hover, &:focus {
+        //background: none;
         color: shade($accent-colour, 10%);
         text-decoration: none;
     }
