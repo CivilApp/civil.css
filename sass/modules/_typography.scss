@@ -198,19 +198,29 @@ hr {
 // 8. Links
 // Keep underline for links because we are using an "accent" colour that is likely to be used on another element
 // It might not be as clean, but it's much easier to distinguish IMHO
-@mixin underline($color: $accent-colour, $weight: 1px, $offset: 2px) {
-    @include linear-gradient(to top, transparent, transparent $offset, $color $offset, $color ($offset + $weight), transparent ($offset + $weight));
-    text-decoration: none;
-}
-a {
+a, .link {
     @include transition(all .2s cubic-bezier(0.4, 0, 0.2, 1));
-    //@include underline();
-
     color: $accent-colour;
+    text-decoration: none;
+    position: relative;
 
     &:hover, &:focus {
-        //background: none;
-        color: shade($accent-colour, 10%);
-        text-decoration: none;
+        color: shade($accent-colour, 12%);
+
+        &:after {
+            opacity: 0;
+            transform: translateY(5px);
+        }
+    }
+
+    &:after {
+        @include transition(all .2s cubic-bezier(0.4, 0, 0.2, 1));
+        background: $accent-colour;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
     }
 }
