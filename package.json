@@ -1,0 +1,26 @@
+{
+  "name": "civil.css",
+  "version": "1.5.0",
+  "description": "A minimal CSS library designed for perfectionists by leveraging the magic of modular scale, and vertical rhythm.",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-cssnano": "^2.0.0",
+    "gulp-sass": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CivilApp/civil.css.git"
+  },
+  "author": "Ian Lai <os@fyianlai.com> (https://www.fyianlai.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CivilApp/civil.css/issues"
+  },
+  "homepage": "https://github.com/CivilApp/civil.css#readme",
+  "private": true
+}
