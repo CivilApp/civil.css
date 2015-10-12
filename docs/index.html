@@ -81,9 +81,17 @@
 
 <footer class="footer block">
     <div class="wrapper">
-        <nav class="nav">
+        <nav class="nav copyright">
             <a href="{{ site.author.url }}" class="nav-item author">Built with <span class="hearts">&#10084;</span> by Ian</a>
         </nav>
+
+        {% if site.affiliated %}
+        <div class="nav affiliated">
+            {% for affiliate in site.affiliated %}
+            <a href="{{ affiliate.url }}" class="nav-item"><small>{{ affiliate.title }}</small></a>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 </footer>
 

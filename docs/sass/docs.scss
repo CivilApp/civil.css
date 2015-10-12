@@ -35,7 +35,7 @@ body {
     color: $white;
     font-family: $sans-serif;
     font-size: rem(16);
-    line-height: 30px;
+    line-height: 1.5rem;
     padding: $kl-i-1-2/2 $kl-i-1-2;
 
     &:hover {
@@ -139,6 +139,26 @@ body {
 
 .hearts {
     color: $accent-colour;
+}
+
+.copyright {
+    float: left;
+}
+
+.affiliated {
+    float: right;
+    line-height: rem(30);
+
+    .nav-item {
+        color: $white;
+        margin-left: 10px;
+        &:after {
+            content: normal;
+        }
+        &:hover {
+            color: $accent-colour;
+        }
+    }
 }
 
 .module-example-code {
