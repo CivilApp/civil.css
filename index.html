@@ -80,7 +80,7 @@
 (function ($) {
     var $baseline = parseInt($("p").css("line-height"), 10);
     $(window).on("load", function () {
-        $(".highlight > pre").civil({
+        $(".js-rhythm, .highlight > pre").civil({
             baseline: $baseline,
             extra: $baseline
         });
