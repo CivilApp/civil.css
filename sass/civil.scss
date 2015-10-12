@@ -1,5 +1,7 @@
 /*! civil.css | MIT License | github.com/CivilApp/civil.css */
-// Build command: sass --load-path bower_components/bourbon/app/assets/stylesheets/ --style compressed --watch sass:dist
+// Build command:
+// `sass --load-path bower_components/bourbon/app/assets/stylesheets/ --style compressed --watch sass:dist`
+// Or, `gulp sass`
 @import "bourbon";
 @import "modules/variables";
 @import "modules/functions";
