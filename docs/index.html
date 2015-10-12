@@ -31,24 +31,37 @@
     </div>
 </header>
 
+{% assign modulesByType = site.modules | group_by: "type" %}
+
 <div class="hero block">
     <div class="wrapper">
         <h1>civil.css</h1>
         <p>A minimal, opinionated, and content-centric CSS library designed for perfectionists by harnessing the magic of modular scale, and vertical rhythm.</p>
-        <p><button class="js-toggleGrid btn btn-secondary">Enable Grid</button></p>
+        <p>
+            <button class="js-toggleGrid btn btn-secondary">Enable Grid</button>
+            <select
+                class="form-select"
+                onChange="window.location.replace(this.options[this.selectedIndex].value)">
+                <option value="">Select a Module</option>
+                {% for type in modulesByType %}
+                    <option value="#guide-{{ type.name }}">{{ type.name | capitalize }}</option>
+                    {% for entry in type.items %}
+                    <option value="#guide-{{ entry.title | slugify }}">&nbsp;&nbsp;&nbsp;{{ entry.title }}</option>
+                    {% endfor %}
+                {% endfor %}
+            </select>
+        </p>
     </div>
 </div>
-
-{% assign modulesByType = site.modules | group_by: "type" %}
 
 {% for type in modulesByType %}
 <div class="module block">
 <div class="wrapper">
-    <h3 class="module-head">{{ type.name | capitalize }}</h3>
+    <h3 id="guide-{{ type.name }}" class="module-head">{{ type.name | capitalize }}</h3>
     <div class="module-body">
         {% for entry in type.items %}
         <div class="module-sub block">
-            <h4>{{ entry.title }}</h4>
+            <h4 id="guide-{{ entry.title | slugify }}">{{ entry.title }}</h4>
             {% if entry.usage %}<p><strong>Usage:</strong> {{ entry.usage }}</p>{% endif %}
             {% if entry.scss %}<p><strong>SCSS:</strong> <code>{{ entry.scss }}</code></p>{% endif %}
             <div class="module-example example-{{ entry.title | slugify }}">

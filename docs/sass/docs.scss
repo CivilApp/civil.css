@@ -21,6 +21,13 @@ body {
     }
 }
 
+.form-select {
+    background: $white;
+    height: 60px;
+    padding: 0 $kl-i-1-2;
+    vertical-align: middle;
+}
+
 .btn {
     @extend .no-underline;
     background: $accent-colour;
@@ -85,6 +92,10 @@ body {
 
     .btn {
         padding: $kl-i-1-2 $kl-i-2;
+    }
+
+    .form-select {
+        margin-left: 6px;
     }
 }
 
