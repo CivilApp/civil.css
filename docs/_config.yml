@@ -1,0 +1,18 @@
+title: "Modular Scale + Vertical Rhythm = civil.css"
+description: "A minimal, opinionated, and content-centric CSS library designed for perfectionists by harnessing the magic of modular scale, and vertical rhythm."
+
+author:
+    name: "Ian Lai"
+    url: "https://www.fyianlai.com"
+
+project:
+    url: http://civilapp.github.io/civil.css/
+    source: "https://github.com/CivilApp/civil.css"
+    download: "https://github.com/CivilApp/civil.css/archive/master.zip"
+
+collections:
+    modules:
+        output: false
+
+exclude:
+    - sass/
