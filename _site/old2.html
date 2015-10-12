@@ -1,0 +1,201 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>civil.css</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nunito:300,400,700|Lora:400,400italic,700,700italic|Source+Code+Pro">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="dist/syntax.css">
+    <link rel="stylesheet" href="dist/civil.css">
+    <style>
+        body {
+            background: #EEE;
+            color: #454553;
+        }
+        .wrapper {
+            width: 960px;
+        }
+        .header {
+            background: #FEFEFE;
+            padding: 1.5rem;
+        }
+            .title {
+                float: left;
+            }
+            .nav {
+                float: right;
+            }
+                .nav-link {
+                    display: inline-block;
+                }
+        .hero {
+            padding: 3rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+            .hero h1 {
+                color: inherit;
+            }
+
+        .main {
+            margin: 1.5rem auto;
+        }
+            .sidenav, .content {
+                background: #FEFEFE;
+                float: left;
+            }
+                .sidenav {
+                    width: 230px;
+                }
+                    .sidenav-item {
+                        display: block;
+                        border-bottom: 1px solid #EEE;
+                        font-size: .8rem;
+                        padding: .75rem 1.5rem;
+                        text-decoration: none;
+                    }
+                        .sidenav-item:hover, .sidenav-item:focus {
+                            background: #FB7973;
+                            color: #FEFEFE;
+                        }
+                        .sidenav-item:last-child {
+                            border: none;
+                        }
+                .content {
+                    margin-left: 30px;
+                    padding: 1.5rem;
+                    width: 700px;
+                }
+
+        .examples {
+            margin-bottom: 1.5rem;
+            list-style: none;
+            outline: 3px solid #EEE;
+            padding: 1.5rem;
+        }
+            .example-item {
+                margin-bottom: 1.5rem;
+            }
+            .example-item:last-child {
+                margin: 0;
+            }
+    </style>
+</head>
+
+<body>
+    <header class="header block">
+        <div class="wrapper">
+            <div class="title">
+                civil.css
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-item">Download</a></li>
+                <a href="#" class="nav-item">Source</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero block">
+        <div class="wrapper">
+            <h1>civil.css</h1>
+            <p>A minimal, opinionated, and content-centric CSS library designed for perfectionists by harnessing the magic of modular scale, and vertical rhythm.</p>
+        </div>
+    </div>
+
+    <div class="main block">
+        <div class="wrapper">
+            <nav class="sidenav">
+                <a href="#" class="sidenav-item">Type Scale</a>
+                <a href="#" class="sidenav-item">Paragraphs</a>
+                <a href="#" class="sidenav-item">Inline Elements</a>
+                <a href="#" class="sidenav-item">Abbreviations</a>
+                <a href="#" class="sidenav-item">Blockquotes</a>
+                <a href="#" class="sidenav-item">Thematic Break</a>
+                <a href="#" class="sidenav-item">Lists</a>
+            </nav>
+            <div class="content">
+                <h3>Type Scale</h3>
+                <div class="examples">
+                    <h1 class="example-item">Heading Level 1</h1>
+                    <h2 class="example-item">Heading Level 2</h2>
+                    <h3 class="example-item">Heading Level 3</h3>
+                    <h4 class="example-item">Heading Level 4</h4>
+                    <h5 class="example-item">Heading Level 5</h5>
+                    <h6 class="example-item">Heading Level 6</h6>
+                </div>
+
+                <h3>Paragraphs</h3>
+                <div class="examples">
+                <p class="example-item">Switzerland is small and neutral! We are more like Germany, ambitious and misunderstood! And then the battle's not so bad? With a warning label this big, you know they gotta be fun! Anyhoo, your net-suits will allow you to experience Fry's worm infested bowels as if you were actually wriggling through them. Good news, everyone! I've taught the toaster to feel love! And from now on you're all named Bender Jr.</p>
+                </div>
+
+                <h3>Inline Elements</h3>
+                <ul class="examples">
+                    <li class="example-item"><a href="#">This line of text is a link.</a></li>
+                    <li class="example-item"><del>This line of text is deleted.</del></li>
+                    <li class="example-item"><em>This line of text is emphasised.</em></li>
+                    <li class="example-item"><strong>This line of text is strong.</strong></li>
+                    <li class="example-item"><code>This line of text is a code.</code></li>
+                    <li class="example-item"><small>This line of text is a small.</small></li>
+                </ul>
+
+                <h3>Abbreviations</h3>
+                <ul class="examples">
+                    <li class="example-item"><abbr title="Cascading Style Sheets">CSS</abbr></li>
+                    <li class="example-item"><abbr title=" Hyper Text Markup Language">HTML</abbr></li>
+                </ul>
+
+                <h3>Blockquotes</h3>
+                <div class="examples">
+                <blockquote><p>And I'm his friend Jesus. Stop! Don't shoot fire stick in space canoe! Cause explosive decompression! THE BIG BRAIN AM WINNING AGAIN! I AM THE GREETEST! NOW I AM LEAVING EARTH, FOR NO RAISEN!</p></blockquote>
+                </div>
+
+                <h3>Thematic Break</h3>
+                <div class="examples">
+                    <p>Yes, if you make it look like an electrical fire. When you do things right, people won't be sure you've done anything at all. Is the Space Pope reptilian!? No! The cat shelter's on to me. I was all of history's great robot actors - Acting Unit 0.8; Thespomat; David Duchovny!</p>
+                    <hr>
+                    <p class="example-item">You seem malnourished. Are you suffering from intestinal parasites? Anyone who laughs is a communist! You'll have all the Slurm you can drink when you're partying with Slurms McKenzie! It must be wonderful. For example, if you <mark>killed your grandfather</mark>, you'd cease to exist!</p>
+                </div>
+
+                <h3>Lists</h3>
+                <h4>Unordered Lists</h4>
+                <div class="examples">
+                    <ul class="example-item">
+                        <li>A true <em>inspiration</em> for the children.</li>
+                        <li>I usually try to keep my sadness pent up inside where it can fester quietly as a <strong>mental illness</strong>.</li>
+                        <li>I just want to talk. It has nothing to do with mating. <a href="#">Fry</a>, that <del>doesn't</del> make sense.</li>
+                    </ul>
+                </div>
+
+                <h4>Ordered Lists</h4>
+                <div class="examples">
+                    <ol class="example-item">
+                        <li>Bender, I didn't know you liked cooking. That's so cute.</li>
+                        <li>Guess again.</li>
+                        <li>That could be 'my' beautiful soul sitting naked on a couch. If I could just learn to play this stupid thing.</li>
+                        <li>Wow! A superpowers drug you can just rub onto your skin? You'd think it would be something you'd have to freebase.</li>
+                    </ol>
+                </div>
+
+                <h4>Description Lists</h4>
+                <div class="examples">
+                    <dl class="example-item">
+                        <dt>Insane in the Mainframe</dt>
+                        <dd>I've got to find a way to escape the horrible ravages of youth.</dd>
+                        <dt>A Taste of Freedom</dt>
+                        <dd>I've been there. My folks were always on me to groom myself and wear underpants.</dd>
+                        <dd>I've taught the toaster to feel love! Goodbye, cruel world.</dd>
+                        <dt>Lethal Inspection</dt>
+                        <dd>Fetal stemcells, aren't those controversial? Good news, everyone!</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+---
+---
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nunito:300,400,700|Lora:400,400italic,700,700italic|Source+Code+Pro">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/normalize/3.0.3/normalize.min.css">
+
+    <link rel="stylesheet" href="css/syntax.css">
+    <link rel="stylesheet" href="css/civil.css">
+    <link rel="stylesheet" href="css/docs.css">
+</head>
+
+<body class="">
+<header class="header block">
+    <div class="wrapper">
+        <div class="brand">
+            <a href="{{ site.project.url }}">civil.css</a>
+        </div>
+        <nav class="nav">
+            <a href="{{ site.project.source }}" class="nav-item btn btn-ghost">Source</a>
+            <a href="{{ site.project.download }}" class="nav-item btn">Download</a></li>
+        </nav>
+    </div>
+</header>
+
+<div class="hero block">
+    <div class="wrapper">
+        <h1>civil.css</h1>
+        <p>A minimal, opinionated, and content-centric CSS library designed for perfectionists by harnessing the magic of modular scale, and vertical rhythm.</p>
+        <p><button class="js-toggleGrid btn btn-secondary">Enable Grid</button></p>
+    </div>
+</div>
+
+{% assign modulesByType = site.modules | group_by: "type" %}
+
+{% for type in modulesByType %}
+<div class="module block">
+<div class="wrapper">
+    <h3 class="module-head">{{ type.name | capitalize }}</h3>
+    <div class="module-body">
+        {% for entry in type.items %}
+        <div class="module-sub block">
+            <h4>{{ entry.title }}</h4>
+            {% if entry.usage %}<p><strong>Usage:</strong> {{ entry.usage }}</p>{% endif %}
+            {% if entry.scss %}<p><strong>SCSS:</strong> <code>{{ entry.scss }}</code></p>{% endif %}
+            <div class="module-example example-{{ entry.title | slugify }}">
+                {{ entry.content }}
+            </div>
+            <div class="module-example-code">
+                {% highlight html %}
+                    {{ entry.content }}
+                {% endhighlight %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endfor %}
+
+<footer class="footer block">
+    <div class="wrapper">
+        <nav class="nav">
+            <a href="{{ site.author.url }}" class="nav-item author">Built with <span class="hearts">&#10084;</span> by Ian</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="//cdn.jsdelivr.net/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script src="js/civil.js"></script>
+<script>
+(function ($) {
+    var $baseline = parseInt($("p").css("line-height"), 10);
+    $(window).on("load", function () {
+        $(".highlight > pre").civil({
+            baseline: $baseline,
+            extra: $baseline
+        });
+    });
+
+    var $body = $("body");
+    $(".js-toggleGrid").click(function (e) {
+        e.preventDefault();
+        $body.toggleClass("grid");
+        $current = $(this).text();
+        $(this).text($current === "Enable Grid" ? "Disable Grid" : "Enable Grid");
+    });
+})(jQuery);
+</script>
+</body>
+
+</html>
