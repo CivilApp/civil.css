@@ -22,6 +22,11 @@ To build civil.css from source, please ensure you have installed [Bower][bower].
     sass --load-path bower_components/bourbon/app/assets/stylesheets/ --style compressed --watch sass:dist
     ```
 
+It can also be built using Gulp ([Bower][bower] dependencies are still required):
+
+1. Run `npm install` to install Gulp build dependencies.
+2. Run `gulp sass` to build the files.
+
 
 ## Inspiration
 
