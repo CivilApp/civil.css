@@ -10,6 +10,12 @@ project:
     source: "https://github.com/CivilApp/civil.css"
     download: "https://github.com/CivilApp/civil.css/archive/master.zip"
 
+affiliated:
+    - title: Morphext
+      url: http://morphext.fyianlai.com/
+    - title: Morphist
+      url: http://morphist.fyianlai.com/
+
 collections:
     modules:
         output: false
