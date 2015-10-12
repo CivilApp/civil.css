@@ -158,6 +158,10 @@ body {
         &:hover {
             color: $accent-colour;
         }
+
+        small {
+            line-height: 100%;
+        }
     }
 }
 
