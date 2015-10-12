@@ -1,11 +1,11 @@
 {
   "name": "civil.css",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "homepage": "https://github.com/CivilApp/civil.css",
   "authors": [
     "Ian Lai <os@fyianlai.com>"
   ],
-  "description": "A minimal CSS library designed for perfectionists by leveraging the magic of modular scale, and vertical rhythm.",
+  "description": "A minimal, opinionated, and content-centric CSS library designed for perfectionists by harnessing the magic of modular scale, and vertical rhythm.",
   "main": [
     "dist/civil.css",
     "dist/syntax.css",
