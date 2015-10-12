@@ -62,7 +62,7 @@
         {% for entry in type.items %}
         <div class="module-sub block">
             <h4 id="guide-{{ entry.title | slugify }}">{{ entry.title }}</h4>
-            {% if entry.usage %}<p><strong>Usage:</strong> {{ entry.usage }}</p>{% endif %}
+            {% if entry.usage %}<p><strong>Usage:</strong> {{ entry.usage }} {% if entry.info %}<a href="{{ entry.info }}" target="_blank">(More Info)</a>{% endif %}</p>{% endif %}
             {% if entry.scss %}<p><strong>SCSS:</strong> <code>{{ entry.scss }}</code></p>{% endif %}
             <div class="module-example example-{{ entry.title | slugify }}">
                 {{ entry.content }}
