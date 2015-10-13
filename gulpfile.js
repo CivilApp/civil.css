@@ -1,29 +1,33 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
-var nano = require('gulp-cssnano');
+var nano = require("gulp-cssnano");
+var sourcemaps = require("gulp-sourcemaps");
 
 /*
  Build civil.css
  */
-gulp.task("sass", function () {
+gulp.task("build", function () {
     gulp.src("./sass/**/*.scss")
+        .pipe(sourcemaps.init())
         .pipe(sass({
             //outputStyle: "compressed",
             includePaths: ["./bower_components/bourbon/app/assets/stylesheets/"]
         }))
         .pipe(nano())
+        .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("./dist"));
 });
 
-gulp.task("sass:watch", ["sass"], function () {
-    gulp.watch("./sass/**/*.scss", ["sass"]);
+gulp.task("build:watch", ["build"], function () {
+    gulp.watch("./sass/**/*.scss", ["build"]);
 });
 
 /*
  Build docs
  */
-gulp.task("sass:docs", function () {
+gulp.task("build:docs", ["copy:docs"], function () {
     gulp.src("./docs/sass/**/*.scss")
+        .pipe(sourcemaps.init())
         .pipe(sass({
             //outputStyle: "compressed",
             includePaths: [
@@ -31,11 +35,12 @@ gulp.task("sass:docs", function () {
                 "./sass"]
         }))
         .pipe(nano())
+        .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("./docs/css"));
 });
 
-gulp.task("sass:docs:watch", ["sass:docs"], function () {
-    gulp.watch("./docs/sass/**/*.scss", ["sass:docs"]);
+gulp.task("build:docs:watch", ["build:docs"], function () {
+    gulp.watch("./docs/sass/**/*.scss", ["build:docs"]);
 });
 
 /*
@@ -49,6 +54,6 @@ gulp.task("copy:docs", function () {
         .pipe(gulp.dest("./docs/js"));
 });
 
-gulp.task("default", ["build", "docs"]);
-gulp.task("build", ["sass"]);
-gulp.task("docs", ["copy:docs", "sass:docs"]);
+gulp.task("default", ["src", "docs"]);
+gulp.task("src", ["build"]);
+gulp.task("docs", ["build:docs"]);
