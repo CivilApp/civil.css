@@ -1,7 +1,7 @@
 // 1. Fix line-height for inline elements in p (for vertical rhythm)
 // Otherwise, the ACTUAL height won't match the COMPUTED height
 p, ul, ol {
-    small, time, code,
+    small, time,
     em, strong {
         line-height: 100%;
     }
