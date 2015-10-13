@@ -23,12 +23,10 @@
     color: #EB586F;
 }
 
-.affiliated {
-    .nav-item {
-        background: none; // Remove underline
-        color: $base-colour-inverse;
-        font-size: rem(16);
-        font-family: $sans-serif;
-        line-height: $kl-i-1;
-    }
+.nav-item-affiliate {
+    background: none; // Remove underline
+    color: $base-colour-inverse;
+    font-size: rem(16);
+    font-family: $sans-serif;
+    line-height: $kl-i-1;
 }
