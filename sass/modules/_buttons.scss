@@ -16,8 +16,10 @@
 }
 
 // 1. Base button
+// Source (adapted): Bootstrap and Basscss
 .button {
     @include btn-size;
+
     background: none;
     border: none;
     cursor: pointer;
@@ -31,7 +33,6 @@
         outline: none;
     }
 }
-
 
 // 2. Button styles
 // Primary

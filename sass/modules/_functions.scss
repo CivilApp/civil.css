@@ -5,5 +5,6 @@
  */
 @function calc-line-height($s) {
     $ratio: ceil($s / $base-keyline-increment);
-    @return ($ratio * $base-keyline-increment) / $s;
+
+    @return $ratio * $base-keyline-increment / $s;
 }
