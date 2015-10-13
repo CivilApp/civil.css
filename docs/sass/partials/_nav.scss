@@ -1,0 +1,13 @@
+.nav {
+    float: right;
+}
+
+.nav-item {
+    display: block;
+    float: left;
+    margin-right: rem(12);
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

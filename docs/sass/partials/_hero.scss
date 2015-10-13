@@ -1,0 +1,29 @@
+.hero {
+    text-align: center;
+    padding: $kl-i-2 0;
+}
+
+.license {
+    font-size: rem(10);
+    top: -1.5rem;
+    a {
+        background: none;
+    }
+}
+
+.utilities {
+    margin-bottom: $kl-i-1;
+}
+
+.btn-grid {
+    font-size: rem(16);
+    line-height: $kl-i-1;
+    margin-right: rem(10);
+}
+
+.form-select {
+    background: $base-colour-inverse;
+    height: 60px;
+    padding: 0 $kl-i-1-2;
+    vertical-align: middle;
+}

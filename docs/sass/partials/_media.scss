@@ -1,0 +1,8 @@
+@media only screen and (max-width: $base-content-width) {
+    // IMPROVE
+    .header, .hero, .footer {
+        .wrapper {
+            padding: 0 $kl-i-1;
+        }
+    }
+}

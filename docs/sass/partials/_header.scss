@@ -1,0 +1,14 @@
+.header {
+    background: $base-colour-inverse;
+    padding: ($kl-i-1-2 / 2 * 3) 0; // 7.5px (15px, leaving 45px for content)
+}
+
+.brand {
+    float: left;
+    padding: ($kl-i-1-2 / 2) 0;
+}
+
+.btn-cta {
+    font-size: rem(16);
+    padding: rem(10.5) $kl-i-1-2;
+}
