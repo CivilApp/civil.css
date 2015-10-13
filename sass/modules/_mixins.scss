@@ -34,6 +34,7 @@
     @include transition(all 0.2s cubic-bezier(0.4, 0, 0.2, 1));
 
     color: $fc;
+    // We are using outline instead of border as it will not increase the height
     outline: 1px solid $bc;
 
     &:hover, &:focus, &:active {
