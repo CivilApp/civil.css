@@ -1,0 +1,20 @@
+<div class="hero block">
+    <div class="wrapper">
+        <h1>civil.css<sup class="license"><a href="http://ian.mit-license.org/" title="MIT License">MIT</a></sup></h1>
+        <p>{{ site.description }}</p>
+        <div class="utilities">
+            <button class="js-toggleGrid btn btn-secondary btn-grid">Enable Grid</button>
+            <select
+                class="form-select"
+                onChange="window.location.replace(this.options[this.selectedIndex].value)">
+                <option value="">Select a Module</option>
+                {% for type in modulesByType %}
+                    <option value="#guide-{{ type.name }}">{{ type.name | capitalize }}</option>
+                    {% for entry in type.items %}
+                    <option value="#guide-{{ entry.title | slugify }}">&nbsp;&nbsp;&nbsp;{{ entry.title }}</option>
+                    {% endfor %}
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</div>
