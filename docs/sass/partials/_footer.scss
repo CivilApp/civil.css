@@ -16,6 +16,7 @@
 
 .author {
     @include underline($color: $base-colour-inverse);
+
     color: $base-colour-inverse;
 }
 
