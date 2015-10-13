@@ -7,7 +7,8 @@ img {
     height: auto;
     margin-bottom: $kl-i-1; // 1 keyline increment bottom
     max-width: 100%;
-    &.stretch {
-        min-width: 100%;
-    }
+}
+
+.img-responsive {
+    min-width: 100%;
 }
