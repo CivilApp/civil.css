@@ -7,7 +7,7 @@
     font-size: rem(10);
     top: -1.5rem;
     a {
-        background: none;
+        background: none; // Remove underline
     }
 }
 
@@ -23,7 +23,7 @@
 
 .form-select {
     background: $base-colour-inverse;
-    height: 60px;
+    height: rem(60); // Force height
     padding: 0 $kl-i-1-2;
     vertical-align: middle;
 }
