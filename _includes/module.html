@@ -1,0 +1,31 @@
+<div class="module block">
+<div class="wrapper">
+    <h3 id="guide-{{ type.name }}" class="module-head">{{ type.name | capitalize }}</h3>
+    <div class="module-body">
+        {% for entry in type.items %}
+        <div class="module-sub block">
+            <h4 id="guide-{{ entry.title | slugify }}">{{ entry.title }}</h4>
+            {% if entry.usage %}
+                <p>
+                    <strong>Usage:</strong> {{ entry.usage }}
+                    {% if entry.info %}
+                        <a href="{{ entry.info }}" target="_blank">(More Info)</a>
+                    {% endif %}
+                </p>
+            {% endif %}
+            {% if entry.scss %}
+                <p><strong>SCSS:</strong> <code>{{ entry.scss }}</code></p>
+            {% endif %}
+            <div class="module-example example-{{ entry.title | slugify }}">
+                {{ entry.content }}
+            </div>
+            <div class="module-code code-{{ entry.title | slugify }}">
+                {% highlight html %}
+                    {{ entry.content }}
+                {% endhighlight %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
