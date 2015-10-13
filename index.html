@@ -26,8 +26,8 @@
             <a href="{{ site.project.url }}">civil.css</a>
         </div>
         <nav class="nav">
-            <a href="{{ site.project.source }}" class="nav-item btn btn-ghost">Source</a>
-            <a href="{{ site.project.download }}" class="nav-item btn">Download</a></li>
+            <a href="{{ site.project.source }}" class="nav-item btn btn-primary-ghost btn-cta">Source</a>
+            <a href="{{ site.project.download }}" class="nav-item btn btn-primary btn-cta">Download</a></li>
         </nav>
     </div>
 </header>
@@ -36,10 +36,10 @@
 
 <div class="hero block">
     <div class="wrapper">
-        <h1>civil.css</h1>
-        <p>A minimal, opinionated, and content-centric CSS library designed for perfectionists by harnessing the magic of modular scale, and vertical rhythm.</p>
-        <p>
-            <button class="js-toggleGrid btn btn-secondary">Enable Grid</button>
+        <h1>civil.css<sup class="license"><a href="http://ian.mit-license.org/" title="MIT License">MIT</a></sup></h1>
+        <p>{{ site.description }}</p>
+        <div class="utilities">
+            <button class="js-toggleGrid btn btn-secondary btn-grid">Enable Grid</button>
             <select
                 class="form-select"
                 onChange="window.location.replace(this.options[this.selectedIndex].value)">
@@ -51,7 +51,7 @@
                     {% endfor %}
                 {% endfor %}
             </select>
-        </p>
+        </div>
     </div>
 </div>
 
@@ -89,7 +89,7 @@
         {% if site.affiliated %}
         <div class="nav affiliated">
             {% for affiliate in site.affiliated %}
-            <a href="{{ affiliate.url }}" class="nav-item"><small>{{ affiliate.title }}</small></a>
+            <a href="{{ affiliate.url }}" class="nav-item">{{ affiliate.title }}</a>
             {% endfor %}
         </div>
         {% endif %}

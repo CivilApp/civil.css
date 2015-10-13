@@ -1,0 +1,43 @@
+.module-head {
+    background: $base-colour;
+    color: $base-colour-inverse;
+    margin: 0;
+    padding: $kl-i-1-2 $kl-i-1;
+}
+
+.module-body {
+    background: $base-colour-inverse;
+    margin-bottom: $kl-i-1;
+    padding: $kl-i-1;
+}
+
+.module-sub {
+    margin-bottom: $kl-i-1;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.module-example {
+    outline: 3px solid $grey-lighter-colour;
+    padding: $kl-i-1;
+}
+
+.module-example-code {
+    margin-top: $kl-i-1;
+}
+
+.example-default-button, .example-ghost-button, .example-button-styles {
+    .btn {
+        margin-right: rem(10);
+    }
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.highlight > pre {
+    border: 0;
+    outline: 3px solid $grey-lighter-colour;
+}

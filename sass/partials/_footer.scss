@@ -1,0 +1,34 @@
+.footer {
+    background: $base-colour;
+    margin-top: $kl-i-2;
+    padding: $kl-i-2 0;
+
+    .nav-item {
+        &:hover, &:focus {
+            color: tint($primary-colour, 15%);
+        }
+    }
+}
+
+.copyright {
+    float: left;
+}
+
+.author {
+    @include underline($color: $base-colour-inverse);
+    color: $base-colour-inverse;
+}
+
+.hearts {
+    color: #EB586F;
+}
+
+.affiliated {
+    .nav-item {
+        background: none; // Remove underline
+        color: $base-colour-inverse;
+        font-size: rem(16);
+        font-family: $sans-serif;
+        line-height: $kl-i-1;
+    }
+}
