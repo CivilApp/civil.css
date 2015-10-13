@@ -1,0 +1,40 @@
+<footer class="footer block">
+    <div class="wrapper">
+        <nav class="nav copyright">
+            <a href="{{ site.author.url }}" class="nav-item author">Built with <span class="hearts">&#10084;</span> by Ian</a>
+        </nav>
+
+        {% if site.affiliated %}
+        <div class="nav affiliated">
+            {% for affiliate in site.affiliated %}
+                <a href="{{ affiliate.url }}" class="nav-item nav-item-affiliate">{{ affiliate.title }}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</footer>
+
+<script src="//cdn.jsdelivr.net/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script src="js/civil.js"></script>
+<script>
+(function ($) {
+    var $baseline = parseInt($("p").css("line-height"), 10);
+    $(window).on("load", function () {
+        $(".js-rhythm, .highlight > pre").civil({
+            baseline: $baseline,
+            extra: $baseline
+        });
+    });
+
+    var $body = $("body");
+    $(".js-toggleGrid").click(function (e) {
+        e.preventDefault();
+        $body.toggleClass("grid");
+        $current = $(this).text();
+        $(this).text($current === "Enable Grid" ? "Disable Grid" : "Enable Grid");
+    });
+})(jQuery);
+</script>
+</body>
+
+</html>

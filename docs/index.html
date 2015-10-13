@@ -1,59 +1,9 @@
 ---
 ---
-<!doctype html>
-<html class="no-js" lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ site.title }}</title>
-    <meta name="description" content="{{ site.description }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nunito:300,400,700|Lora:400,400italic,700,700italic|Source+Code+Pro">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/normalize/3.0.3/normalize.min.css">
-    <link rel="prefetch" href="http://basehold.it/i/30">
-
-    <link rel="stylesheet" href="css/syntax.css">
-    <link rel="stylesheet" href="css/civil.css">
-    <link rel="stylesheet" href="css/docs.css">
-</head>
-
-<body class="">
-<header class="header block">
-    <div class="wrapper">
-        <div class="brand">
-            <a href="{{ site.project.url }}">civil.css</a>
-        </div>
-        <nav class="nav">
-            <a href="{{ site.project.source }}" class="nav-item btn btn-primary-ghost btn-cta">Source</a>
-            <a href="{{ site.project.download }}" class="nav-item btn btn-primary btn-cta">Download</a></li>
-        </nav>
-    </div>
-</header>
-
 {% assign modulesByType = site.modules | group_by: "type" %}
 
-<div class="hero block">
-    <div class="wrapper">
-        <h1>civil.css<sup class="license"><a href="http://ian.mit-license.org/" title="MIT License">MIT</a></sup></h1>
-        <p>{{ site.description }}</p>
-        <div class="utilities">
-            <button class="js-toggleGrid btn btn-secondary btn-grid">Enable Grid</button>
-            <select
-                class="form-select"
-                onChange="window.location.replace(this.options[this.selectedIndex].value)">
-                <option value="">Select a Module</option>
-                {% for type in modulesByType %}
-                    <option value="#guide-{{ type.name }}">{{ type.name | capitalize }}</option>
-                    {% for entry in type.items %}
-                    <option value="#guide-{{ entry.title | slugify }}">&nbsp;&nbsp;&nbsp;{{ entry.title }}</option>
-                    {% endfor %}
-                {% endfor %}
-            </select>
-        </div>
-    </div>
-</div>
+{% include header.html %}
+{% include hero.html %}
 
 {% for type in modulesByType %}
 <div class="module block">
@@ -63,12 +13,21 @@
         {% for entry in type.items %}
         <div class="module-sub block">
             <h4 id="guide-{{ entry.title | slugify }}">{{ entry.title }}</h4>
-            {% if entry.usage %}<p><strong>Usage:</strong> {{ entry.usage }} {% if entry.info %}<a href="{{ entry.info }}" target="_blank">(More Info)</a>{% endif %}</p>{% endif %}
-            {% if entry.scss %}<p><strong>SCSS:</strong> <code>{{ entry.scss }}</code></p>{% endif %}
+            {% if entry.usage %}
+                <p>
+                    <strong>Usage:</strong> {{ entry.usage }}
+                    {% if entry.info %}
+                        <a href="{{ entry.info }}" target="_blank">(More Info)</a>
+                    {% endif %}
+                </p>
+            {% endif %}
+            {% if entry.scss %}
+                <p><strong>SCSS:</strong> <code>{{ entry.scss }}</code></p>
+            {% endif %}
             <div class="module-example example-{{ entry.title | slugify }}">
                 {{ entry.content }}
             </div>
-            <div class="module-example-code">
+            <div class="module-code code-{{ entry.title | slugify }}">
                 {% highlight html %}
                     {{ entry.content }}
                 {% endhighlight %}
@@ -80,43 +39,4 @@
 </div>
 {% endfor %}
 
-<footer class="footer block">
-    <div class="wrapper">
-        <nav class="nav copyright">
-            <a href="{{ site.author.url }}" class="nav-item author">Built with <span class="hearts">&#10084;</span> by Ian</a>
-        </nav>
-
-        {% if site.affiliated %}
-        <div class="nav affiliated">
-            {% for affiliate in site.affiliated %}
-            <a href="{{ affiliate.url }}" class="nav-item">{{ affiliate.title }}</a>
-            {% endfor %}
-        </div>
-        {% endif %}
-    </div>
-</footer>
-
-<script src="//cdn.jsdelivr.net/jquery/3.0.0-alpha1/jquery.min.js"></script>
-<script src="js/civil.js"></script>
-<script>
-(function ($) {
-    var $baseline = parseInt($("p").css("line-height"), 10);
-    $(window).on("load", function () {
-        $(".js-rhythm, .highlight > pre").civil({
-            baseline: $baseline,
-            extra: $baseline
-        });
-    });
-
-    var $body = $("body");
-    $(".js-toggleGrid").click(function (e) {
-        e.preventDefault();
-        $body.toggleClass("grid");
-        $current = $(this).text();
-        $(this).text($current === "Enable Grid" ? "Disable Grid" : "Enable Grid");
-    });
-})(jQuery);
-</script>
-</body>
-
-</html>
+{% include footer.html %}
