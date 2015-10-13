@@ -27,7 +27,6 @@
 h1, h2, h3, h4, h5, h6 {
     color: tint($base-font-colour, 3%); // (a)
     font-family: $sans-serif;
-
     font-weight: 400; // (b)
     margin: 0 0 $kl-i-1; // (c)
 }
@@ -77,7 +76,6 @@ h1, h2, h3 {
     text-rendering: optimizeLegibility; // (b)
 }
 
-
 // 2. Inline elements
 // Inherits heading styles (h5, and h6 respectively)
 time {
@@ -95,15 +93,14 @@ time, small {
 
 // Source: Bootstrap's Reboot
 abbr[title], abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted $grey-light-colour;
+    cursor: help;
+    border-bottom: 1px dotted $grey-light-colour;
 }
 
 mark {
-    background: rgba(255, 255, 0, .4);
+    background: rgba(255, 255, 0, 0.4);
     padding: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2) modular-scale(-4, $modular-scale-base-1 $modular-scale-base-2);
 }
-
 
 // 3. Paragraphs
 // Reset:
@@ -116,7 +113,6 @@ p, %p {
     text-rendering: optimizeLegibility; // (c)
 }
 
-
 // 4. Code blocks
 // Much like <img>, it's likely to break vertical rhythm, but we'll ignore it
 pre, code {
@@ -126,7 +122,6 @@ pre, code {
 
 pre {
     border: 1px solid $grey-light-colour;
-
     margin: 0 0 $kl-i-1;
     padding: $kl-i-1-2 $kl-i-1;
 
@@ -163,12 +158,12 @@ blockquote {
     }
 }
 
-
 // 6. Lists
 // Same as paragraphs
 // Source (<dl>, <dt>, and <dd>): Bootstrap's Reboot
 ul, ol, dl {
     @extend %p;
+
     ul, ol {
         margin: 0;
     }
@@ -182,45 +177,40 @@ dd {
     margin: 0 0 $kl-i-1;
 }
 
-
 // 7. Thematic break / divider
 // Source: Lingonberry, a WordPress theme by Anders Noren
 hr {
     $hr-height: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2);
     $adjusted-keyline: ($kl-i-1 - $hr-height) / 2 + $kl-i-1;
+
     background: $grey-lighter-colour;
     border: 0;
-    margin: $adjusted-keyline auto;
     height: $hr-height;
+    margin: $adjusted-keyline auto;
     width: 50%;
 }
 
 // 8. Links
 // Keep underline for links because we are using an "accent" colour that is likely to be used on another element
 // It might not be as clean, but it's much easier to distinguish IMHO
-a, .link {
-    @include transition(all .2s cubic-bezier(0.4, 0, 0.2, 1));
-    color: $accent-colour;
+@mixin underline($color: $primary-colour, $weight: 1px, $offset: 1px) {
+    @include linear-gradient(to top, transparent, transparent $offset, $color $offset, $color ($offset + $weight), transparent ($offset + $weight));
+
     text-decoration: none;
-    position: relative;
 
     &:hover, &:focus {
-        color: shade($accent-colour, 12%);
-
-        &:after {
-            opacity: 0;
-            transform: translateY(5px);
-        }
+        background: none;
     }
+}
 
-    &:after {
-        @include transition(all .2s cubic-bezier(0.4, 0, 0.2, 1));
-        background: $accent-colour;
-        bottom: 0;
-        content: "";
-        height: 1px;
-        left: 0;
-        position: absolute;
-        width: 100%;
+a {
+    @include transition(all 0.2s cubic-bezier(0.4, 0, 0.2, 1));
+
+    @include underline;
+
+    color: $primary-colour;
+
+    &:hover, &:focus {
+        color: shade($primary-colour, 15%);
     }
 }

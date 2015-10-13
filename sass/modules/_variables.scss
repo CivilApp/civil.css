@@ -1,5 +1,5 @@
 $base-content-width: 37.5rem; // 750px
-$root-font-size: 20px;
+$root-font-size: 20px; // in px
 $em-base: $root-font-size;
 $base-font-size: 1rem; // 20px
 $base-line-height: 1.5;
@@ -24,16 +24,17 @@ $h4-font-size: modular-scale(1, $modular-scale-base-1 $modular-scale-base-2);
 $h5-font-size: modular-scale(0, $modular-scale-base-1 $modular-scale-base-2);
 $h6-font-size: modular-scale(-2, $modular-scale-base-1 $modular-scale-base-2);
 
-// Default theme
+// Fonts
 $serif: "Lora", $georgia;
 $sans-serif: "Nunito", $helvetica;
 $monospace: "Source Code Pro", $monospace;
 
-$base-font-colour: #40403D;
-$base-colour: #373B44;
-$accent-colour: #FB7973;
+// Palette
+$base-colour: #454553;
+$base-inverse-colour: #FEFEFE;
+$primary-colour: #EB586F;
+$secondary-colour: #4AA0D5;
+$base-font-colour: $base-colour;
 
-// Thin lines
-$grey-light-colour: #CCC;
-// Thick lines, and highlights
-$grey-lighter-colour: #EEE;
+$grey-light-colour: #CCC; // Thin lines
+$grey-lighter-colour: #EEE; // Thick lines, and highlights

@@ -1,0 +1,45 @@
+@mixin btn-size($fs: $base-font-size, $lh: $base-line-height, $py: $kl-i-1-2, $px: $kl-i-1) {
+    font-size: $fs;
+    line-height: $lh;
+    padding: $py $px;
+}
+
+@mixin btn-style($fc: $base-inverse-colour, $bg: $primary-colour) {
+    background: $bg;
+    color: $fc;
+
+    &:hover, &:focus, &:active {
+        background: tint($bg, 10%);
+        color: $fc;
+        outline: 3px solid tint($bg, 50%);
+    }
+}
+
+// 1. Base button
+.button {
+    @include btn-size;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $sans-serif;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:hover, &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+
+// 2. Button styles
+// Primary
+.button-primary {
+    @include btn-style;
+}
+
+// Secondary
+.button-secondary {
+    @include btn-style($bg: $secondary-colour);
+}
