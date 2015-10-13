@@ -35,5 +35,5 @@
 }
 
 .btn-secondary-ghost {
-    @include btn-style($secondary-colour, $secondary-colour);
+    @include btn-style-ghost($secondary-colour, $secondary-colour);
 }
