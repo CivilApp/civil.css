@@ -1,23 +1,6 @@
-@mixin btn-size($fs: $base-font-size, $lh: $base-line-height, $py: $kl-i-1-2, $px: $kl-i-1) {
-    font-size: $fs;
-    line-height: $lh;
-    padding: $py $px;
-}
-
-@mixin btn-style($fc: $base-inverse-colour, $bg: $primary-colour) {
-    background: $bg;
-    color: $fc;
-
-    &:hover, &:focus, &:active {
-        background: tint($bg, 10%);
-        color: $fc;
-        outline: 3px solid tint($bg, 50%);
-    }
-}
-
 // 1. Base button
 // Source (adapted): Bootstrap and Basscss
-.button {
+.btn {
     @include btn-size;
 
     background: none;
@@ -36,11 +19,21 @@
 
 // 2. Button styles
 // Primary
-.button-primary {
+.btn-primary {
     @include btn-style;
 }
 
 // Secondary
-.button-secondary {
+.btn-secondary {
     @include btn-style($bg: $secondary-colour);
+}
+
+
+// 3. Ghost buttons
+.btn-primary-ghost {
+    @include btn-style-ghost;
+}
+
+.btn-secondary-ghost {
+    @include btn-style($secondary-colour, $secondary-colour);
 }

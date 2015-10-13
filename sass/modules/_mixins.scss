@@ -1,0 +1,43 @@
+// 1. Medium-style underlines
+@mixin underline($color: $primary-colour, $weight: 1px, $offset: 1px) {
+    @include linear-gradient(to top, transparent, transparent $offset, $color $offset, $color ($offset + $weight), transparent ($offset + $weight));
+
+    text-decoration: none;
+
+    &:hover, &:focus {
+        background: none;
+    }
+}
+
+
+// 2. Buttons
+@mixin btn-size($fs: $base-font-size, $lh: $base-line-height, $py: $kl-i-1-2, $px: $kl-i-1) {
+    font-size: $fs;
+    line-height: $lh;
+    padding: $py $px;
+}
+
+@mixin btn-style($fc: $base-colour-inverse, $bg: $primary-colour) {
+    @include transition(all 0.2s cubic-bezier(0.4, 0, 0.2, 1));
+
+    background: $bg;
+    color: $fc;
+
+    &:hover, &:focus, &:active {
+        background: tint($bg, 10%);
+        color: $fc;
+        outline: 3px solid tint($bg, 50%);
+    }
+}
+
+@mixin btn-style-ghost($fc: $primary-colour, $bc: $primary-colour) {
+    @include transition(all 0.2s cubic-bezier(0.4, 0, 0.2, 1));
+
+    color: $fc;
+    outline: 1px solid $bc;
+
+    &:hover, &:focus, &:active {
+        color: tint($bc, 10%);
+        outline: 3px solid tint($bc, 50%);
+    }
+}
