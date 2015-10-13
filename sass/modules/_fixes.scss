@@ -10,9 +10,9 @@ p, ul, ol {
 // 2. Temporary fix for unusual line-height behaviour
 // Computed line-height isn't the same as the displayed line-height
 h1, h2, h3 {
-    line-height: $base-keyline-increment * 2;
+    line-height: $kl-i-2;
 }
 
 h4, h5, h6, time, small {
-    line-height: $base-keyline-increment;
+    line-height: $kl-i-1;
 }
