@@ -1,8 +1,8 @@
-$base-content-width: 37.5rem; // 750px
-$root-font-size: 20px; // in px
+$base-content-width: 37.5rem !default; // 750px
+$root-font-size: 20px !default; // in px
 $em-base: $root-font-size;
-$base-font-size: 1rem; // 20px
-$base-line-height: 1.5;
+$base-font-size: 1rem !default; // 20px
+$base-line-height: 1.5 !default;
 
 // Keyline increments are used for establishing vertical rhythm
 $base-keyline-increment: $base-font-size * $base-line-height;
@@ -12,29 +12,32 @@ $kl-i-3-2: $kl-i-1-2 * 3;
 $kl-i-2: $base-keyline-increment * 2;
 
 // Create a modular scale using $base-font-size and $base-width
-$modular-scale-ratio: $golden;
+$modular-scale-ratio: $golden !default;
 $modular-scale-base-1: $base-font-size;
 $modular-scale-base-2: $base-content-width;
 
 // Font sizes for headings
-$h1-font-size: modular-scale(4, $modular-scale-base-1 $modular-scale-base-2);
-$h2-font-size: modular-scale(3, $modular-scale-base-1 $modular-scale-base-2);
-$h3-font-size: modular-scale(2, $modular-scale-base-1 $modular-scale-base-2);
-$h4-font-size: modular-scale(1, $modular-scale-base-1 $modular-scale-base-2);
-$h5-font-size: modular-scale(0, $modular-scale-base-1 $modular-scale-base-2);
-$h6-font-size: modular-scale(-2, $modular-scale-base-1 $modular-scale-base-2);
+$h1-font-size: modular-scale(4, $modular-scale-base-1 $modular-scale-base-2) !default;
+$h2-font-size: modular-scale(3, $modular-scale-base-1 $modular-scale-base-2) !default;
+$h3-font-size: modular-scale(2, $modular-scale-base-1 $modular-scale-base-2) !default;
+$h4-font-size: modular-scale(1, $modular-scale-base-1 $modular-scale-base-2) !default;
+$h5-font-size: modular-scale(0, $modular-scale-base-1 $modular-scale-base-2) !default;
+$h6-font-size: modular-scale(-2, $modular-scale-base-1 $modular-scale-base-2) !default;
 
 // Fonts
-$serif: "Lora", $georgia;
-$sans-serif: "Nunito", $helvetica;
-$monospace: "Source Code Pro", $monospace;
+$serif: "Lora", $georgia !default;
+$sans-serif: "Nunito", $helvetica !default;
+$monospace: "Source Code Pro", $monospace !default;
 
 // Palette
-$base-colour: #454553;
-$base-colour-inverse: #FEFEFE;
-$primary-colour: #EB586F;
-$secondary-colour: #4AA0D5;
-$base-font-colour: $base-colour;
+$base-colour: #454553 !default;
+$base-colour-inverse: #FEFEFE !default;
+$primary-colour: #EB586F !default;
+$secondary-colour: #4AA0D5 !default;
+$base-font-colour: $base-colour !default;
 
-$grey-light-colour: #CCC; // Thin lines
-$grey-lighter-colour: #EEE; // Thick lines, and highlights
+// Thin lines
+$grey-light-colour: #CCC !default;
+
+// Thick lines, and highlights
+$grey-lighter-colour: #EEE !default;
