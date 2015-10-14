@@ -1,0 +1,25 @@
+// wf-sourcecodepro-n4-active
+// wf-nunito-n3-active wf-nunito-n4-active wf-nunito-n7-active
+// wf-lora-n4-active wf-lora-i4-active wf-lora-n7-active wf-lora-i7-active
+// wf-active
+
+$serif-objs: "body";
+$sans-serif-objs: "h1, h2, h3, h4, h5, h6, .btn, .form-select";
+
+#{$serif-objs} {
+    font-family: $georgia;
+}
+
+#{$sans-serif-objs} {
+    font-family: $helvetica;
+}
+
+.wf-active {
+    #{$serif-objs} {
+        font-family: $serif;
+    }
+
+    #{$sans-serif-objs} {
+        font-family: $sans-serif;
+    }
+}
