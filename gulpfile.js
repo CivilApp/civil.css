@@ -25,7 +25,7 @@ gulp.task("build:watch", ["build"], function () {
 /*
  Build docs
  */
-gulp.task("build:docs", ["copy:docs"], function () {
+gulp.task("build:docs", function () {
     gulp.src("./docs/sass/**/*.scss")
         .pipe(sourcemaps.init())
         .pipe(sass({
@@ -54,6 +54,14 @@ gulp.task("copy:docs", function () {
         .pipe(gulp.dest("./docs/js"));
 });
 
+/*
+ Watch src and docs
+ */
+gulp.task("dev", function () {
+    gulp.watch("./sass/**/*.scss", ["build"]);
+    gulp.watch("./docs/sass/**/*.scss", ["docs"]);
+});
+
 gulp.task("default", ["src", "docs"]);
 gulp.task("src", ["build"]);
-gulp.task("docs", ["build:docs"]);
+gulp.task("docs", ["copy:docs", "build:docs"]);
