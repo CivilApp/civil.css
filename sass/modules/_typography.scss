@@ -156,6 +156,19 @@ blockquote {
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
     }
+
+    // Sources
+    footer {
+        color: tint($base-font-colour, 20%);
+        font-size: rem(16);
+        font-style: normal;
+        line-height: calc-line-height(rem(16));
+        //margin-bottom: $kl-i-1;
+
+        &:before {
+            content: "\2014 \00A0";
+        }
+    }
 }
 
 // 6. Lists
