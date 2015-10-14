@@ -1,0 +1,30 @@
+<div class="module block">
+<div class="wrapper">
+    <h3 id="guide-javascript" class="module-head">JavaScript</h3>
+    <div class="module-body">
+        <div class="module-sub block">
+            <h4 id="guide-civil-js">civil.js</h4>
+            <p>
+                An optional, <a href="https://jquery.com/">jQuery</a> plugin is included (<a href="https://github.com/CivilApp/civil.css/blob/master/dist/civil.js"><code>dist/civil.js</code></a>), and it can help restore vertical rhythm for blocks with unpredictable heights, e.g. code blocks, images, and other objects that do not obey the baseline. Below is an example of how you may use it (it is currently being used on this page).
+            </p>
+            <div class="module-code code-civil-js">
+{% highlight javascript %}
+$(window).on("load", function () {
+    // Targetting images (with class .js-rhythm), and code blocks
+    $(".js-rhythm, .highlight > pre").civil({
+        baseline: 30,
+        extra: 30
+    });
+});
+{% endhighlight %}
+            </div>
+            <p>
+                The plugin will restore vertical rhythm on the page by adding <code>margin-bottom</code> to offending blocks <em>(compensating)</em>. If <code>extra</code> is supplied, it will be added to the compensated margin.
+            </p>
+            <p>
+                The example above is wrapped in <code>$(window).on("load", fn)</code> to ensure that images are rendered, and that their heights are computed before we determine how much extra margin it needs for vertical rhythm to be established.
+            </p>
+        </div>
+    </div>
+</div>
+</div>
