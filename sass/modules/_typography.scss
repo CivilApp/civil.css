@@ -195,7 +195,6 @@ hr {
 // It might not be as clean, but it's much easier to distinguish IMHO
 a {
     @include transition(all 0.2s cubic-bezier(0.4, 0, 0.2, 1));
-
     @include underline;
 
     color: $primary-colour;
