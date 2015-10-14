@@ -15,8 +15,7 @@
 }
 
 .author {
-    @include underline($color: $base-colour-inverse);
-
+    @include magic-link($base-colour-inverse);
     color: $base-colour-inverse;
 }
 
