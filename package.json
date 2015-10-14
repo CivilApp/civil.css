@@ -1,6 +1,6 @@
 {
   "name": "civil.css",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "A minimal, opinionated, and content-centric CSS library designed for perfectionists by harnessing the magic of modular scale, and vertical rhythm.",
   "main": "gulpfile.js",
   "dependencies": {},
