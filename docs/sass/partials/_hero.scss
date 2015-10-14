@@ -24,6 +24,8 @@
 
 .form-select {
     background: $base-colour-inverse;
+    //font-family: $sans-serif;
+    font-size: rem(16);
     height: rem(60); // Force height
     padding: 0 $kl-i-1-2;
     vertical-align: middle;
