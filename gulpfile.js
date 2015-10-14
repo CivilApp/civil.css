@@ -4,7 +4,7 @@ var nano = require("gulp-cssnano");
 var sourcemaps = require("gulp-sourcemaps");
 
 /*
- Build civil.css
+ Build civil.css, and copy to docs
  */
 gulp.task("build", function () {
     gulp.src("./sass/**/*.scss")
@@ -15,7 +15,8 @@ gulp.task("build", function () {
         }))
         .pipe(nano())
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest("./dist"));
+        .pipe(gulp.dest("./dist"))
+        .pipe(gulp.dest("./docs/css"));
 });
 
 gulp.task("build:watch", ["build"], function () {
@@ -59,7 +60,7 @@ gulp.task("copy:docs", function () {
  */
 gulp.task("dev", function () {
     gulp.watch("./sass/**/*.scss", ["build"]);
-    gulp.watch("./docs/sass/**/*.scss", ["docs"]);
+    gulp.watch("./docs/sass/**/*.scss", ["build:docs"]);
 });
 
 gulp.task("default", ["src", "docs"]);
