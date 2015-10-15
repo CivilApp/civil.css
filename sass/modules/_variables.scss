@@ -12,9 +12,10 @@ $kl-i-3-2: $kl-i-1-2 * 3;
 $kl-i-2: $base-keyline-increment * 2;
 
 // Create a modular scale using $base-font-size and $base-width
-$modular-scale-ratio: $golden !default;
-$modular-scale-base-1: $base-font-size;
-$modular-scale-base-2: $base-content-width;
+$civil-ms-ratio: $golden !default;
+$modular-scale-ratio: $civil-ms-ratio;
+$modular-scale-base-1: $base-font-size !default;
+$modular-scale-base-2: $base-content-width !default;
 
 // Font sizes for headings
 $h1-font-size: modular-scale(4, $modular-scale-base-1 $modular-scale-base-2) !default;
