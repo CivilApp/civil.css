@@ -48,8 +48,8 @@ gulp.task("build:docs:watch", ["build:docs"], function () {
  Copy civil.css latest build for docs
  */
 gulp.task("copy:docs", function () {
-    gulp.src("dist/*.css")
-        .pipe(gulp.dest("./docs/css"));
+    //gulp.src("dist/*.css")
+    //    .pipe(gulp.dest("./docs/css"));
 
     gulp.src("dist/*.js")
         .pipe(gulp.dest("./docs/js"));
