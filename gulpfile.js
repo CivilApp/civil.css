@@ -1,13 +1,17 @@
 var gulp = require("gulp");
+var runSequence = require("run-sequence");
+var rename = require('gulp-rename');
+
 var sass = require("gulp-sass");
 var nano = require("gulp-cssnano");
 var sourcemaps = require("gulp-sourcemaps");
+var uglify = require("gulp-uglify");
 
 /*
  Build civil.css, and copy to docs
  */
 gulp.task("build", function () {
-    gulp.src("./sass/**/*.scss")
+    return gulp.src("./sass/**/*.scss")
         .pipe(sourcemaps.init())
         .pipe(sass({
             //outputStyle: "compressed",
@@ -15,8 +19,7 @@ gulp.task("build", function () {
         }))
         .pipe(nano())
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest("./dist"))
-        .pipe(gulp.dest("./docs/css"));
+        .pipe(gulp.dest("./dist"));
 });
 
 gulp.task("build:watch", ["build"], function () {
@@ -24,10 +27,22 @@ gulp.task("build:watch", ["build"], function () {
 });
 
 /*
+    Build jQuery plugin
+ */
+gulp.task("build:js", function () {
+    return gulp.src("./js/**/*.js")
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest("./dist/"));
+});
+
+/*
  Build docs
  */
 gulp.task("build:docs", function () {
-    gulp.src("./docs/sass/**/*.scss")
+    return gulp.src("./docs/sass/**/*.scss")
         .pipe(sourcemaps.init())
         .pipe(sass({
             //outputStyle: "compressed",
@@ -47,22 +62,38 @@ gulp.task("build:docs:watch", ["build:docs"], function () {
 /*
  Copy civil.css latest build for docs
  */
-gulp.task("copy:docs", function () {
-    //gulp.src("dist/*.css")
-    //    .pipe(gulp.dest("./docs/css"));
+gulp.task("prepare:docs", ["copy:css", "copy:js"]);
 
-    gulp.src("dist/*.js")
+gulp.task("copy:css", function () {
+    return gulp.src("./dist/*.css")
+        .pipe(gulp.dest("./docs/css"));
+});
+
+gulp.task("copy:js", function () {
+    return gulp.src("./dist/*.js")
         .pipe(gulp.dest("./docs/js"));
 });
 
 /*
  Watch src and docs
  */
-gulp.task("dev", function () {
-    gulp.watch("./sass/**/*.scss", ["build"]);
+gulp.task("dev", function (callback) {
+    gulp.watch("./sass/**/*.scss", function (event) {
+        runSequence(
+            "build",
+            "prepare:docs"
+        )
+    });
     gulp.watch("./docs/sass/**/*.scss", ["build:docs"]);
 });
 
-gulp.task("default", ["src", "docs"]);
-gulp.task("src", ["build"]);
-gulp.task("docs", ["copy:docs", "build:docs"]);
+gulp.task("default", function (callback) {
+    runSequence(
+        "src",
+        ["docs"],
+        callback
+    );
+});
+
+gulp.task("src", ["build", "build:js"]);
+gulp.task("docs", ["prepare:docs", "build:docs"]);
