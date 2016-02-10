@@ -31,7 +31,7 @@ To build `civil.css` from source, please ensure you have installed [Bower][bower
 It can also be built using [Gulp][gulp] ([Bower][bower] dependencies are still required):
 
 1. Run `npm install` to install the build dependencies.
-2. Run `gulp build` to build `civil.css`.
+2. Run `gulp build` (`npm run build` if [Gulp][gulp] is not installed globally) to build `civil.css`.
 
 ### Configuration
 

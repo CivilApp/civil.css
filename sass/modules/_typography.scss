@@ -137,6 +137,11 @@ code {
     padding: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2) modular-scale(-4, $modular-scale-base-1 $modular-scale-base-2);
 }
 
+// Remove normalize.css margin
+figure {
+    margin: 0;
+}
+
 // 5. Quote blocks
 blockquote {
     font-style: italic;

@@ -8,13 +8,13 @@ var sourcemaps = require("gulp-sourcemaps");
 var uglify = require("gulp-uglify");
 
 /*
- Build civil.css, and copy to docs
+    Build civil.css, and minify
  */
 gulp.task("build", function () {
     return gulp.src("./sass/**/*.scss")
         .pipe(sourcemaps.init())
         .pipe(sass({
-            //outputStyle: "compressed",
+            // outputStyle: "compressed",
             includePaths: ["./bower_components/bourbon/app/assets/stylesheets/"]
         }))
         .pipe(nano())
@@ -39,19 +39,20 @@ gulp.task("build:js", function () {
 });
 
 /*
- Build docs
+    Build docs
  */
 gulp.task("build:docs", function () {
     return gulp.src("./docs/sass/**/*.scss")
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(sass({
-            //outputStyle: "compressed",
+            // outputStyle: "compressed",
             includePaths: [
                 "./bower_components/bourbon/app/assets/stylesheets",
-                "./sass"]
+                "./sass"
+            ]
         }))
         .pipe(nano())
-        .pipe(sourcemaps.write("."))
+        // .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("./docs/css"));
 });
 
@@ -60,7 +61,7 @@ gulp.task("build:docs:watch", ["build:docs"], function () {
 });
 
 /*
- Copy civil.css latest build for docs
+    Copy civil.css latest build for docs
  */
 gulp.task("prepare:docs", ["copy:css", "copy:js"]);
 
@@ -75,7 +76,7 @@ gulp.task("copy:js", function () {
 });
 
 /*
- Watch src and docs
+    Watch src and docs
  */
 gulp.task("dev", function (callback) {
     gulp.watch("./sass/**/*.scss", function (event) {
