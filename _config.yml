@@ -22,3 +22,5 @@ collections:
 
 exclude:
     - sass/
+    - CNAME
+    - Gemfile
