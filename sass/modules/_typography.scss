@@ -12,11 +12,10 @@
  1. Headings
  2. Inline elements
  3. Paragraphs
- 4. Code blocks
- 5. Quote blocks
- 6. Lists
- 7. Thematic break / divider
- 8. Links
+ 4. Quote blocks
+ 5. Lists
+ 6. Thematic break / divider
+ 7. Links
  */
 
 // 1. Headings
@@ -113,36 +112,7 @@ p, %p {
     text-rendering: optimizeLegibility; // (c)
 }
 
-// 4. Code blocks
-// Much like <img>, it's likely to break vertical rhythm, but we'll ignore it
-pre, code {
-    font-family: $monospace;
-    font-size: rem(16); // 16px (code shouldn't be read like paragraphs)
-}
-
-pre {
-    border: 1px solid $grey-light-colour;
-    margin: 0 0 $kl-i-1;
-    padding: $kl-i-1-2 $kl-i-1;
-
-    // Set a background and padding for <code> only when it's used in isolation
-    code {
-        background: none;
-        padding: 0;
-    }
-}
-
-code {
-    background: $grey-lighter-colour;
-    padding: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2) modular-scale(-4, $modular-scale-base-1 $modular-scale-base-2);
-}
-
-// Remove normalize.css margin
-figure {
-    margin: 0;
-}
-
-// 5. Quote blocks
+// 4. Quote blocks
 blockquote {
     font-style: italic;
     margin: 0 0 $kl-i-1;
@@ -176,7 +146,7 @@ blockquote {
     }
 }
 
-// 6. Lists
+// 5. Lists
 // Same as paragraphs
 // Source (<dl>, <dt>, and <dd>): Bootstrap's Reboot
 ul, ol, dl {
@@ -195,7 +165,7 @@ dd {
     margin: 0 0 $kl-i-1;
 }
 
-// 7. Thematic break / divider
+// 6. Thematic break / divider
 // Source: Lingonberry, a WordPress theme by Anders Noren
 hr {
     $hr-height: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2);
@@ -208,7 +178,7 @@ hr {
     width: 50%;
 }
 
-// 8. Links
+// 7. Links
 // Keep underline for links because we are using an "accent" colour that is likely to be used on another element
 // It might not be as clean, but it's much easier to distinguish IMHO
 a {

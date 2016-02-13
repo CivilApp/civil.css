@@ -1,0 +1,44 @@
+// 1. Code blocks
+// Much like <img>, it's likely to break vertical rhythm, but we'll ignore it
+pre, code {
+    font-family: $monospace;
+    font-size: rem(16); // 16px (code shouldn't be read like paragraphs)
+}
+
+pre {
+    border: 1px solid $grey-light-colour;
+    margin: 0 0 $kl-i-1;
+    padding: $kl-i-1-2 $kl-i-1;
+
+    // Support for line numbers
+    table {
+        max-width: 100%;
+        width: 100%;
+
+        td:not(:first-child) {
+            padding-left: $kl-i-1;
+        }
+    }
+
+    pre {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    // Set a background and padding for <code> only when it's used in isolation
+    code {
+        background: none;
+        padding: 0;
+    }
+}
+
+code {
+    background: $grey-lighter-colour;
+    padding: modular-scale(-6, $modular-scale-base-1 $modular-scale-base-2) modular-scale(-4, $modular-scale-base-1 $modular-scale-base-2);
+}
+
+// Remove normalize.css margin
+figure {
+    margin: 0;
+}
