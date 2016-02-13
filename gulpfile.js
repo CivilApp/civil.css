@@ -66,7 +66,7 @@ gulp.task("build:docs:watch", ["build:docs"], function () {
 gulp.task("prepare:docs", ["copy:css", "copy:js"]);
 
 gulp.task("copy:css", function () {
-    return gulp.src("./dist/*.css")
+    return gulp.src("./dist/*.css*")
         .pipe(gulp.dest("./docs/css"));
 });
 
