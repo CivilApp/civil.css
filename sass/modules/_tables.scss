@@ -1,26 +1,27 @@
-// 1. Basic table
+// 1. Base table
 // Inspired by Bootstrap 4
-// Striped with horizontal borders
-table {
-    width: 100%;
-    max-width: 100%;
+.tbl {
     margin: 0 0 $kl-i-1;
+    max-width: 100%;
+    width: 100%;
+
+    th {
+        text-align: left;
+    }
+
+    thead th {
+        border-bottom: 2px solid $grey-light-colour;
+    }
+
+    th, td {
+        border-top: 1px solid $grey-light-colour;
+        padding: $kl-i-1-2;
+    }
 }
 
-th {
-    text-align: left;
-}
-
-// Breaks vertical alignment (JavaScript plugin required)
-th, td {
-    border-top: 1px solid $grey-light-colour;
-    padding: $kl-i-1-2;
-}
-
-thead th {
-    border-bottom: 2px solid $grey-light-colour;
-}
-
-tbody tr:nth-of-type(odd) {
-    background: $grey-lighter-colour;
+// 2. Striped table
+.tbl-striped {
+    tbody tr:nth-of-type(odd) {
+        background: $grey-lighter-colour;
+    }
 }
