@@ -1,7 +1,8 @@
-// 1. Responsive images
-// They're likely to break vertical rhythm when stretched
+// 1. Basic image
+// Scales down to fit the container's width
+//
+// It's likely to break vertical rhythm when stretched
 // There's no real around this besides JavaScript
-// .stretch can be used to stretch small images to the container's width
 img {
     display: block;
     height: auto;
@@ -9,6 +10,8 @@ img {
     max-width: 100%;
 }
 
+// 2. Responsive image
+// Scales up to fit the container's width
 .img-responsive {
     min-width: 100%;
 }
